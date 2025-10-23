@@ -26,15 +26,15 @@ Testing
 
 - Run npm t and look at lib.test.js. What does the test file verify?
 
-  - a
+  - The test verifies that the calculations for `calculateWinner` actually works for the different ways someone could win. It also tests the null results that would occur if there was either a tie, an empty board, or an incomplete game.
 
 - Why test calculateWinner separately from the React components?
 
-  - a
+  - `calculateWinner` is a pure JS function that is an export. It doesn't have any React guts in it at all. It makes sense to test it by itself since React could do something that you might be unaware of.
 
 - Pick one test case and explain what board state it's testing
 
-  - a
+  - One of the test cases in the test file checks to make sure an X victory is prioritized over O if both somehow win. This realistically would never happen, but let's say both have a complete vertical and/or horizontal row. If that were the case, again, X will win no matter what. This shows it's a good idea to account for small, odd edge cases like this when making an app.
 
 File Organization
 
