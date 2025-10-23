@@ -54,15 +54,15 @@ Modern JavaScript Patterns
 
 - The production code uses [...squares] instead of squares.slice(). What's the difference?
 
-  - a
+  - `[...squares]` is a new array using a spread operator that makes a shallow copy of the original `squares` object. [`squares.slice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice) also makes a shallow copy. The difference between that and a spread operator is that `slice()` gives us more control over what exactly we want in the new array. `const numbers = [1, 2, 3, 4];` Calling `numbers.slice(2, 3)` will give us `[2, 3]`.
 
 - Find the Array.from() usage. What does it do? Why use it over a manual loop?
 
-  - a
+  - `Array.from()` is used here to essentially draw out the game board and its current state. Every time we click a square, it will be filled with either an `X` or `O` depending on who's turn it is. `Array.from()` is used over a `for` loop as those kinds of loops tend to mutate data, and in turn cause unpredictability. [`Array.from()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from) however, creates a shallow copy of the array that can be easily iterated upon.
 
 - The calculateWinner function chains find(), some(), and every(). Trace through how it works with a winning board.
 
-  - a
+  - `find()` looks for a specific thing in the array. In this case, it's looking for `X`'s and `O`'s. `some()` looks for at least one element that passes a test, while `every()` checks if everything passes a test. `some()` in this case checks if one of the letters meets the victory combo requirements, while `every()` checks if every `X` or `O` is in the winnable combination.
 
 **UX Improvements** Compare the tutorial version to the production version:
 
