@@ -92,15 +92,15 @@ Component Design
 
 - Which component(s) re-rendered?
 
-  - a
+  - The only components that re-rendered what the square I clicked on, and the heading telling us whose turn it is now.
 
 - What does the squares state look like after your move?
 
-  - a
+  - The `value` went from `null` to `"X"`
 
 - What is the value of the turn state?
 
-  - a
+  - The value of the turn state starts with `"X"`, but after that person's move is made, the states changes to `"O"`.
 
 **Execution Tracing** Walk through what happens when you click an empty square in the middle of a game:
 
