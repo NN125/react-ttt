@@ -82,11 +82,11 @@ Component Design
 
 - The Square component receives onClick as a prop. Why not use handleClick directly in the Square component?
 
-  - a
+  - Using `handleClick` directly in the `Square` component means it would need to know the current state of the app along with a whole bunch of other things that it doesn't need to know. Letting `onClick` handle it keeps things simple and reusable.
 
 - What would break if Square managed its own state with useState?
 
-  - a
+  - A good handful of things would break. One of which will make determining the winner either a lot more complicated or downright impossible. Giving each square its own state could no longer allow the app to have access to the board state.
 
 **React DevTools Investigation** Open the Components tab and play one move:
 
