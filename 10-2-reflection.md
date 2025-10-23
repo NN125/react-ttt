@@ -92,7 +92,7 @@ Component Design
 
 - Which component(s) re-rendered?
 
-  - The only components that re-rendered what the square I clicked on, and the heading telling us whose turn it is now.
+  - The components that re-rendered are the squares, and the app itself.
 
 - What does the squares state look like after your move?
 
