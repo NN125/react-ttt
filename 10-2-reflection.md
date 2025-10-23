@@ -19,3 +19,103 @@
 4. String templates: What made writing HTML in template strings difficult compared to writing actual HTML?
 
    - Writing HTML in strings or template literals removes access to autocomplete, error checking, and syntax highlighting, tools that make coding a heck of a lot easier to do. Without access to those, it becomes a massive pain to maintain.
+
+### Code Analysis
+
+Testing
+
+- Run npm t and look at lib.test.js. What does the test file verify?
+
+  - a
+
+- Why test calculateWinner separately from the React components?
+
+  - a
+
+- Pick one test case and explain what board state it's testing
+
+  - a
+
+File Organization
+
+- How is the code organized differently than the tutorial version?
+
+  - a
+
+- Why are WINNING_INDICES and calculateWinner in separate files?
+
+  - a
+
+- What's the benefit of this separation?
+
+  - a
+
+Modern JavaScript Patterns
+
+- The production code uses [...squares] instead of squares.slice(). What's the difference?
+
+  - a
+
+- Find the Array.from() usage. What does it do? Why use it over a manual loop?
+
+  - a
+
+- The calculateWinner function chains find(), some(), and every(). Trace through how it works with a winning board.
+
+  - a
+
+**UX Improvements** Compare the tutorial version to the production version:
+
+- What happens when you try to restart before making any moves?
+
+  - a
+
+- What does the production version do that the tutorial doesn't for tied games?
+
+  - a
+
+- How does the reset button text change based on game state?
+
+  - a
+
+Component Design
+
+- The Square component receives onClick as a prop. Why not use handleClick directly in the Square component?
+
+  - a
+
+- What would break if Square managed its own state with useState?
+
+  - a
+
+**React DevTools Investigation** Open the Components tab and play one move:
+
+- Which component(s) re-rendered?
+
+  - a
+
+- What does the squares state look like after your move?
+
+  - a
+
+- What is the value of the turn state?
+
+  - a
+
+**Execution Tracing** Walk through what happens when you click an empty square in the middle of a game:
+
+- Which function runs first?
+
+  - a
+
+- What state updates occur?
+
+  - a
+
+- Which components re-render?
+
+  - a
+
+- Why does the turn switch automatically?
+
+  - a
