@@ -40,15 +40,15 @@ File Organization
 
 - How is the code organized differently than the tutorial version?
 
-  - a
+  - The tutorial has everything in an html file, and I mean everything. The code that makes the game work, the css styles, you name it. This code base has everything separated off into its own file. The game code is in the `App.jsx`, while some aspects of it, like `calculateWinner`, are separated into other js files.
 
 - Why are WINNING_INDICES and calculateWinner in separate files?
 
-  - a
+  - They're separated because it's easier to maintain and to make the code more modular. In other words, these two are modules.
 
 - What's the benefit of this separation?
 
-  - a
+  - `WINNING_INDICES` is a static array that stores the winning combos for `X` and `O`. Keeping it separated in its own file allows it to be easily reused without screwing something up. Same goes for `calculateWinner`, but it's a function that calculates the math/logic for whoever's the winner.
 
 Modern JavaScript Patterns
 
