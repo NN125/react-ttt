@@ -68,15 +68,15 @@ Modern JavaScript Patterns
 
 - What happens when you try to restart before making any moves?
 
-  - a
+  - The reset button is greyed out, and when you hover over it, you get the 🚫 sign. In addition, clicking it does nothing.
 
 - What does the production version do that the tutorial doesn't for tied games?
 
-  - a
+  - The production code actually shows in the UI that the game is tied, while the tutorial still lists who is up next, even though you can't do anything but reload.
 
 - How does the reset button text change based on game state?
 
-  - a
+  - As mentioned earlier, when the game just starts, the button is greyed out. After the first move is made, the button becomes purple, signifying that it is now clickable. After a game is complete, the text changes from "Restart" to "Play Again".
 
 Component Design
 
