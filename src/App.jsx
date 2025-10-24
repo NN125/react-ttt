@@ -44,6 +44,11 @@ export default function App() {
           {getStatusMessage()}
         </header>
 
+        {/* Moves message */}
+        <header className="text-xl font-bold text-white">
+          {`Moves: ${moveCount}`}
+        </header>
+
         <div className="relative grid grid-cols-3 w-fit gap-0">
           {/* Horizontal lines */}
           <div className="absolute left-0 right-0 h-1 bg-purple-500 top-[calc(33.333%-0.125rem)]" />
