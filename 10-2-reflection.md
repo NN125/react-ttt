@@ -123,3 +123,31 @@ Component Design
 ### Production Code Extension
 
 I decided to add in a move counter that keeps track of the number of moves that have been made in the game. I picked that over highlighting the victorious squares since I think it is a more useful and easier feature to implement. Highlighting the squares is a cool feature, but I only see it being useful for any hard-sighted people using this, somehow.
+
+I started off by pasting in the `New state: const [moveCount, setMoveCount] = useState(0)` line that was listed in the hints. I then typed in `setMoveCount(moveCount + 1);` below the other set lines that are located inside of `handleClick`. This way the count won't go up if you click on a filled box, or if the game is won. I added another `setMoveCount` statement inside of `handleReset` so the count would reset.
+
+This leads me to my first, and only, very minor problem I ran into. Before adding in the UI elements for the `moveCount` I went ahead and threw it into a `console.log` to see if the count is actually going up, and resetting when I clicked the reset button. It was working, but the first count was being displayed as 0, so stupidly I assumed it was because the `useState` was set at 0, so I upped it to 1. When I added it in to the UI, the move count started at 1 when it should be at 0. I realized my mistake and set the `useState` back to 0. I should've copied the `setMoveCount` code for the `console.log`, but hey, lesson learned.
+
+For the UI I started with something simple:
+
+```jsx
+<header className="text-xl font-bold text-white">
+  {`Moves: ${moveCount}`}
+</header>
+```
+
+I started off by copying the status message code and slightly tweaking it for the move counter. This didn't meet the requirements for the counter yet, but I wanted to make something simple first before adding in the slightly more fancy wording. After dealing with the minor fiasco I mentioned earlier, I went ahead and added in the more fancy bits:
+
+```jsx
+<header className="text-xl font-bold text-white">
+  {hasGameStarted
+    ? `Moves: ${moveCount} ${moveCount === 1 ? "move" : "moves"}`
+    : "No moves yet"}
+</header>
+```
+
+I will go ahead and give Copilot the most credit for the fancier bit. It pretty much suggested it as I was typing it out so I went with it. It took me a little bit to think of a way to make it work, but then I looked at the other ternary statements inside the app, and I noticed the `hasGameStarted` const. I figured I could use that to display the `No moves yet` string, and then switch to counting the numbers once the first move is made. There's also another ternary statement inside of there to determine plurality. I hadn't even thought to do that before, so I gotta hand it to Copilot for suggesting that.
+
+So yeah, this was relatively painless to implement. I only ran into a very minor issue, mainly from my own little mistake, but it was quickly fixed, and it turned out really nice.
+
+My changes can be seen on this [fork](https://github.com/NN125/react-ttt).
