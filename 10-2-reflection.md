@@ -106,16 +106,16 @@ Component Design
 
 - Which function runs first?
 
-  - a
+  - `onClick={() => handleClick(i)`, which is located in the `Array.from()`, runs first.
 
 - What state updates occur?
 
-  - a
+  - First, `if (squares[index] || winner) return;` runs, checking if the move is valid. Then, `const newSquares = [...squares]; newSquares[index] = turn;` runs, creating a new array for the squares by making a shallow copy, and determining if its an `X` or `O` by whose turn it is. Lastly, `setSquares(newSquares); setTurn(turn === "X" ? "O" : "X");` runs, changing the state of the squares and switching over to the next player.
 
 - Which components re-render?
 
-  - a
+  - The app and the squares re-render.
 
 - Why does the turn switch automatically?
 
-  - a
+  - The turn switches automatically thanks to this line: `setTurn(turn === "X" ? "O" : "X");`. It's a ternary operator that checks whether or not it's `X` or `O`'s turn before setting one of those letters down on the square and letting the next person take their turn.
