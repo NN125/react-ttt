@@ -119,3 +119,7 @@ Component Design
 - Why does the turn switch automatically?
 
   - The turn switches automatically thanks to this line: `setTurn(turn === "X" ? "O" : "X");`. It's a ternary operator that checks whether or not it's `X` or `O`'s turn before setting one of those letters down on the square and letting the next person take their turn.
+
+### Production Code Extension
+
+I decided to add in a move counter that keeps track of the number of moves that have been made in the game. I picked that over highlighting the victorious squares since I think it is a more useful and easier feature to implement. Highlighting the squares is a cool feature, but I only see it being useful for any hard-sighted people using this, somehow.
