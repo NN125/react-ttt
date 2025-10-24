@@ -5,7 +5,7 @@ import { calculateWinner } from "./lib";
 export default function App() {
   const [turn, setTurn] = useState("X"); // "X" is first turn
   const [squares, setSquares] = useState(Array(9).fill(null));
-  const [moveCount, setMoveCount] = useState(1); // starting from move 1
+  const [moveCount, setMoveCount] = useState(0); // starting from move 1
 
   const hasGameStarted = squares.some((square) => square !== null);
 
@@ -26,7 +26,7 @@ export default function App() {
   const handleReset = () => {
     setSquares(Array(9).fill(null));
     setTurn("X");
-    setMoveCount(1);
+    setMoveCount(0);
   };
 
   const getStatusMessage = () => {
