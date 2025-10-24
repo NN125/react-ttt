@@ -46,7 +46,9 @@ export default function App() {
 
         {/* Moves message */}
         <header className="text-xl font-bold text-white">
-          {`Moves: ${moveCount}`}
+          {hasGameStarted
+            ? `Moves: ${moveCount} ${moveCount === 1 ? "move" : "moves"}`
+            : "No moves yet"}
         </header>
 
         <div className="relative grid grid-cols-3 w-fit gap-0">
