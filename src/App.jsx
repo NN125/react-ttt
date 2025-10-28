@@ -12,6 +12,13 @@ export default function App() {
   const winner = calculateWinner(squares);
   const isTie = !winner && squares.every((square) => square !== null);
 
+  const getStatusMessage = () => {
+    if (winner) return `Winner: ${winner}! 🎉`;
+    if (isTie) return "It's a tie! 🤝";
+
+    return `Next player: ${turn}`;
+  };
+
   const handleClick = (index) => {
     if (squares[index] || winner) return; // Ignore click if square is already filled or game is won.
 
@@ -27,13 +34,6 @@ export default function App() {
     setSquares(Array(9).fill(null));
     setTurn("X");
     setMoveCount(0);
-  };
-
-  const getStatusMessage = () => {
-    if (winner) return `Winner: ${winner}! 🎉`;
-    if (isTie) return "It's a tie! 🤝";
-
-    return `Next player: ${turn}`;
   };
 
   return (
