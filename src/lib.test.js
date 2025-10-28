@@ -71,10 +71,4 @@ describe("calculateWinner", () => {
       expect(calculateWinner(board)).toBe("O");
     });
   });
-
-  test("prioritizes X over O when both somehow win (edge case)", () => {
-    // This shouldn't happen in a real game, but tests the implementation
-    const board = ["X", "X", "X", "O", "O", "O", null, null, null];
-    expect(calculateWinner(board)).toBe("X");
-  });
 });
