@@ -19,7 +19,7 @@ export default function App() {
     newSquares[index] = turn;
 
     setSquares(newSquares);
-    setTurn(turn === "X" ? "O" : "X");
+    setTurn((prev) => (prev === "X" ? "O" : "X"));
     setMoveCount(moveCount + 1);
   };
 
