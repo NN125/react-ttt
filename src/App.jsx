@@ -61,12 +61,12 @@ export default function App() {
       </style>
       <div className="flex flex-col items-center gap-6">
         {/* Status message */}
-        <header className="text-3xl font-bold text-white">
+        <header className="text-3xl font-bold text-white px-6 py-3 bg-gray-800 rounded-lg shadow-lg">
           <h1>{getStatusMessage()}</h1>
         </header>
 
         {/* Moves message */}
-        <header className="text-xl font-bold text-white">
+        <header className="text-xl font-bold text-white px-6 py-3 bg-gray-800 rounded-lg shadow-lg">
           {hasGameStarted
             ? `Moves: ${moveCount} ${moveCount === 1 ? "move" : "moves"}`
             : "No moves yet"}
@@ -90,7 +90,7 @@ export default function App() {
         <button
           onClick={handleReset}
           disabled={!hasGameStarted}
-          className={`px-6 py-3 font-bold rounded-lg transition-colors duration-200 ${
+          className={`px-6 py-3 font-bold rounded-lg shadow-lg transition-colors duration-200 ${
             hasGameStarted
               ? "bg-purple-500 hover:bg-purple-600 text-white cursor-pointer"
               : "bg-gray-500 text-gray-300 cursor-not-allowed"
