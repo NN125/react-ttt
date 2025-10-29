@@ -61,18 +61,18 @@ export default function App() {
       </style>
       <div className="flex flex-col items-center gap-6">
         {/* Status message */}
-        <header className="text-3xl font-bold text-white px-6 py-3 bg-gray-800 rounded-lg shadow-lg">
+        <header className="text-3xl font-bold text-white px-6 py-3 bg-gray-900 rounded-lg shadow-lg">
           <h1>{getStatusMessage()}</h1>
         </header>
 
         {/* Moves message */}
-        <header className="text-xl font-bold text-white px-6 py-3 bg-gray-800 rounded-lg shadow-lg">
+        <header className="text-xl font-bold text-white px-6 py-3 bg-gray-900 rounded-lg shadow-lg">
           {hasGameStarted
             ? `Moves: ${moveCount} ${moveCount === 1 ? "move" : "moves"}`
             : "No moves yet"}
         </header>
 
-        <div className="relative grid grid-cols-3 w-fit gap-0 bg-gray-800 rounded-lg shadow-lg">
+        <div className="relative grid grid-cols-3 w-fit gap-0 bg-gray-900 rounded-lg shadow-lg">
           {/* Horizontal lines */}
           <div className="absolute left-0 right-0 h-1 bg-purple-500 top-[calc(33.333%-0.125rem)]" />
           <div className="absolute left-0 right-0 h-1 bg-purple-500 top-[calc(66.666%-0.125rem)]" />
