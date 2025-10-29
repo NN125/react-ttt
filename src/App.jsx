@@ -53,9 +53,9 @@ export default function App() {
             100% { background-position: 0% 50%; }
           }
           .animate-rainbow {
-            background: linear-gradient(270deg, #ff6ec4, #f9d423, #42e695, #3a8dde, #a259c6, #ff6ec4);
+            background: linear-gradient(270deg, #b06ab3, #bcae6e, #5fa87b, #4b6cb7, #6d5eac, #b06ab3);
             background-size: 1200% 1200%;
-            animation: rainbow 24s ease-in-out infinite;
+            animation: rainbow 48s ease-in-out infinite;
           }
         `}
       </style>
