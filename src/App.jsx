@@ -12,6 +12,11 @@ export default function App() {
   const winner = calculateWinner(squares);
   const isTie = !winner && squares.every((square) => square !== null);
 
+  // Determine background class based on game state
+  const bgClass = winner
+    ? "bg-gradient-to-r from-pink-500 via-yellow-400 via-green-400 via-blue-500 to-purple-600 animate-rainbow"
+    : "bg-gray-900";
+
   const getStatusMessage = () => {
     if (winner) return `Winner: ${winner}! 🎉`;
     if (isTie) return "It's a tie! 🤝";
@@ -37,7 +42,23 @@ export default function App() {
   };
 
   return (
-    <main className="w-screen h-screen flex justify-center items-center bg-gray-900">
+    <main
+      className={`w-screen h-screen flex justify-center items-center ${bgClass}`}
+    >
+      <style>
+        {`
+          @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+          }
+          .animate-rainbow {
+            background: linear-gradient(270deg, #ff6ec4, #f9d423, #42e695, #3a8dde, #a259c6, #ff6ec4);
+            background-size: 1200% 1200%;
+            animation: rainbow 8s ease-in-out infinite;
+          }
+        `}
+      </style>
       <div className="flex flex-col items-center gap-6">
         {/* Status message */}
         <header className="text-3xl font-bold text-white">
@@ -61,12 +82,7 @@ export default function App() {
           <div className="absolute top-0 bottom-0 w-1 bg-purple-500 left-[calc(66.666%-0.125rem)]" />
 
           {Array.from({ length: 9 }, (_, i) => (
-            <Square
-              key={i}
-              value={squares[i]}
-              // Parent manages the square's state and 🆔. Square is more presentational.
-              onClick={() => handleClick(i)}
-            />
+            <Square key={i} value={squares[i]} onClick={() => handleClick(i)} />
           ))}
         </div>
 
