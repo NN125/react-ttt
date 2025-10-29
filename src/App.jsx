@@ -41,6 +41,10 @@ export default function App() {
     setMoveCount(0);
   };
 
+  // Determine background class based on game state
+  const bgClass = winner
+    ? "bg-gradient-to-r from-pink-500 via-yellow-400 via-green-400 via-blue-500 to-purple-600 animate-rainbow"
+    : "bg-gray-900";
   return (
     <main
       className={`w-screen h-screen flex justify-center items-center ${bgClass}`}
