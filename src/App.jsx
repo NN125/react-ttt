@@ -72,7 +72,7 @@ export default function App() {
             : "No moves yet"}
         </header>
 
-        <div className="relative grid grid-cols-3 w-fit gap-0">
+        <div className="relative grid grid-cols-3 w-fit gap-0 bg-gray-800 rounded-lg shadow-lg">
           {/* Horizontal lines */}
           <div className="absolute left-0 right-0 h-1 bg-purple-500 top-[calc(33.333%-0.125rem)]" />
           <div className="absolute left-0 right-0 h-1 bg-purple-500 top-[calc(66.666%-0.125rem)]" />
